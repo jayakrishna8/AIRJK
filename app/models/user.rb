@@ -4,14 +4,13 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable, :omniauthable, omniauth_providers: %i[facebook]
   validates :fullname, presence: true, length: {maximum: 50}
-
+  has_many :rooms
 
   def self.from_omniauth(auth)
 
 	  user = User.where(email: auth.info.email).first 		
 
 	  if user 
-	  	byebug
 	  	return user
 	  else 
 		where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
