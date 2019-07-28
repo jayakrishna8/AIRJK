@@ -18,6 +18,8 @@ gem 'devise', '~> 4.6', '>= 4.6.2'
 gem 'toastr-rails'
 gem 'omniauth', '~> 1.9'
 gem 'omniauth-facebook', '~> 5.0'
+gem "paperclip", "~> 6.0.0"
+
 
 
 gem 'bootsnap', '>= 1.1.0', require: false
