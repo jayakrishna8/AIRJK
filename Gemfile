@@ -16,6 +16,8 @@ gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
 gem 'jquery-rails'
 gem 'devise', '~> 4.6', '>= 4.6.2'
 gem 'toastr-rails'
+gem 'omniauth', '~> 1.9'
+gem 'omniauth-facebook', '~> 5.0'
 
 
 gem 'bootsnap', '>= 1.1.0', require: false
