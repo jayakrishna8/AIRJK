@@ -23,17 +23,15 @@
   </li>
   <li class="sidebar-item">
     <%= link_to "Amenities", amenities_room_path, class: "sidebar-link active" %>
-    <%# if !@room.price.blank? %>
     <span class="pull-right text-babu"><i class="fa fa-check"></i></span>
-    <%# end %>
   </li>
   <li class="sidebar-item">
     <%= link_to "Location", location_room_path, class: "sidebar-link active" %>
-    <% if !@room.address.blank? %>
-      <span class="pull-right text-babu"><i class="fa fa-check"></i></span>
-    <% end %>
+    <span class="pull-right text-babu"><i class="fa fa-check"></i></span>
   </li>
 </ul>
+<hr/>
+
 <% is_ready = !@room.active && !@room.price.blank? && !@room.listing_name.blank? && !@room.photos.blank? && !@room.address.blank?  %>
 
 <%= form_for @room do |f| %>
