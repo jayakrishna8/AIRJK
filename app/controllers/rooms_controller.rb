@@ -3,6 +3,7 @@ class RoomsController < ApplicationController
   before_action :set_room, except: [:index, :new, :create]
   before_action :authenticate_user!, except: [:show]
   before_action :is_authorised, only: [:listing, :pricing, :description, :photo_upload, :amenities, :location, :update]
+
   def index
     @rooms = current_user.rooms
   end
@@ -16,13 +17,14 @@ class RoomsController < ApplicationController
     if @room.save
       redirect_to listing_room_path(@room), notice: "Saved..."
     else
-      flash[:alert] = "Something went wrong"
+      flash[:alert] = "Something went wrong..."
       render :new
     end
   end
 
   def show
     @photos = @room.photos
+    @guest_reviews = @room.guest_reviews
   end
 
   def listing
@@ -45,6 +47,7 @@ class RoomsController < ApplicationController
   end
 
   def update
+
     new_params = room_params
     new_params = room_params.merge(active: true) if is_ready_room
 
@@ -56,6 +59,7 @@ class RoomsController < ApplicationController
     redirect_back(fallback_location: request.referer)
   end
 
+  # --- Reservations ---
   def preload
     today = Date.today
     reservations = @room.reservations.where("start_date >= ? OR end_date >= ?", today, today)

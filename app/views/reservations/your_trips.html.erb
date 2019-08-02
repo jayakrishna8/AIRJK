@@ -31,6 +31,9 @@
                   <%= trip.room.user.fullname %>
                 <% end %>
               </span>
+              <div class="col-md-3 text-right">
+              <%= render partial: "reviews/guest_form", locals: {reservation: trip} %>
+            </div>
             </div>
           </div>
           <hr/>
