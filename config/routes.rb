@@ -18,8 +18,6 @@ Rails.application.routes.draw do
     end
     resources :photos, only: [:create, :destroy]
     resources :reservations, only: [:create]
-
-    get 'search' => 'pages#search'
   end
 
   resources :guest_reviews, only: [:create, :destroy]
@@ -27,5 +25,7 @@ Rails.application.routes.draw do
 
   get '/your_trips' => 'reservations#your_trips'
   get '/your_reservations' => 'reservations#your_reservations'
+
+  get 'search' => 'pages#search'
 
 end
