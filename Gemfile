@@ -19,7 +19,7 @@ gem 'toastr-rails'
 gem 'omniauth', '~> 1.9'
 gem 'omniauth-facebook', '~> 5.0'
 gem "paperclip", "~> 6.0.0"
-gem 'geocoder', '~> 1.5', '>= 1.5.1'
+gem 'geocoder', '~> 1.6'
 gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
 gem 'ransack', '~> 2.1', '>= 2.1.1'
 
